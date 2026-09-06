@@ -1,0 +1,7 @@
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+
+# The blog/ subfolder has its own .gitignore for its Next.js-specific
+# excludes (node_modules, .next, .env, etc.) — git honors nested .gitignore
+# files automatically.

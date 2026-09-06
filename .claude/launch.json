@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "steven-bennett-site",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["-m", "http.server", "5173"],
+      "port": 5173
+    },
+    {
+      "name": "blog-dev",
+      "runtimeExecutable": "cmd",
+      "runtimeArgs": ["/c", "npm", "--prefix", "C:\\Users\\aarup\\OneDrive\\Desktop\\repository folder\\steven-bennett-blog", "run", "dev"],
+      "port": 3000
+    }
+  ]
+}

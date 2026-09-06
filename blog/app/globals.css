@@ -1,0 +1,188 @@
+@import "tailwindcss";
+
+:root {
+  --paper: #ffffff;
+  --paper-card: #fafafa;
+  --ink: #17181a;
+  --ink-soft: #52525b;
+  --ink-faint: #9ca3af;
+  --accent: #1a56db;
+  --accent-deep: #143f9e;
+  --accent-soft: rgba(26, 86, 219, 0.08);
+  --border: rgba(17, 17, 17, 0.1);
+  --surface: #ffffff;
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-paper-card: var(--paper-card);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-ink-faint: var(--ink-faint);
+  --color-accent: var(--accent);
+  --color-accent-deep: var(--accent-deep);
+  --color-accent-soft: var(--accent-soft);
+  --color-border: var(--border);
+  --color-surface: var(--surface);
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-merriweather);
+  --font-mono: var(--font-dm-mono);
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans);
+}
+
+::selection {
+  background: var(--accent-soft);
+  color: var(--ink);
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-mono-label {
+  font-family: var(--font-mono);
+  letter-spacing: 0.08em;
+}
+
+.paper-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.7rem 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--paper);
+  background: var(--ink);
+  transition: opacity 0.15s ease;
+}
+.btn-primary:hover {
+  opacity: 0.85;
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.4rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--ink);
+  border: 1px solid var(--border);
+  background: transparent;
+  transition:
+    border-color 0.15s ease,
+    color 0.15s ease;
+}
+.btn-outline:hover {
+  border-color: var(--ink);
+  color: var(--accent-deep);
+}
+
+/* Article typography for rendered post content */
+.prose-notebook {
+  font-family: var(--font-sans);
+  color: var(--ink);
+  font-size: 1.15rem;
+  line-height: 1.75;
+}
+.prose-notebook > * + * {
+  margin-top: 1.3em;
+}
+.prose-notebook h2 {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin-top: 1.8em;
+  line-height: 1.3;
+}
+.prose-notebook h3 {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-top: 1.6em;
+  line-height: 1.35;
+}
+.prose-notebook p {
+  margin-top: 1.3em;
+}
+.prose-notebook p:empty {
+  margin-top: 0.5em;
+}
+/* Lets specific words read as heading-weight without breaking the
+   paragraph into a separate block — see the "Emphasize" editor button. */
+.prose-notebook .prose-big {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.25em;
+}
+.prose-notebook a {
+  color: var(--accent-deep);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--accent-soft);
+}
+.prose-notebook a:hover {
+  text-decoration-color: var(--accent-deep);
+}
+.prose-notebook blockquote {
+  border-left: 2px solid var(--ink);
+  padding-left: 1.4rem;
+  font-family: var(--font-display);
+  font-style: italic;
+  color: var(--ink-soft);
+}
+.prose-notebook ul,
+.prose-notebook ol {
+  padding-left: 1.4rem;
+}
+.prose-notebook ul {
+  list-style: disc;
+}
+.prose-notebook ol {
+  list-style: decimal;
+}
+.prose-notebook img {
+  border: 1px solid var(--border);
+}
+.prose-notebook code {
+  background: var(--paper-card);
+  padding: 0.15em 0.4em;
+  border-radius: 0.3em;
+  font-size: 0.9em;
+  font-family: var(--font-mono);
+}
+.prose-notebook mark {
+  background: #fdf1a8;
+  color: var(--ink);
+  padding: 0.05em 0.15em;
+  border-radius: 0.15em;
+}
+.prose-notebook hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 2.5em 0;
+}
+
+/* Tiptap editor body reuses the same article typography */
+.ProseMirror {
+  outline: none;
+  min-height: 320px;
+}
+.ProseMirror p.is-editor-empty:first-child::before {
+  content: attr(data-placeholder);
+  float: left;
+  color: var(--ink-faint);
+  pointer-events: none;
+  height: 0;
+}
