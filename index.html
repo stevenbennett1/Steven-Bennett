@@ -25,8 +25,10 @@
       <a href="#journey">Journey</a>
       <a href="#focus">Focus</a>
       <a href="#philosophy">Philosophy</a>
-      <!-- Points at the blog app's own dev server (localhost:3000). Update to the real blog domain once deployed. -->
-      <a href="http://localhost:3000">Blog</a>
+      <!-- Local dev: the blog runs on its own port, so this needs the absolute
+           URL. In production, the blog is proxied to /blog on this same domain
+           (see vercel.json) — change this to a relative href="/blog" once deployed. -->
+      <a href="http://localhost:3000/blog">Blog</a>
       <a href="#contact">Contact</a>
     </nav>
 

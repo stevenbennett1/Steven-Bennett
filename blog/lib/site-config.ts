@@ -12,8 +12,11 @@ export const siteConfig = {
   authorTitle: "Deep Tech Investor",
   authorBio:
     "Steven spent a decade building startups before becoming a deep tech investor. He writes about the lessons from both sides of the table.",
-  authorPhotoUrl: "/author.jpg",
-  url: "http://localhost:3000",
+  // Note: next/image doesn't auto-prefix a plain string src with the app's
+  // basePath (set in next.config.ts) — this needs the /blog prefix included
+  // manually to match.
+  authorPhotoUrl: "/blog/author.jpg",
+  url: "http://localhost:3000/blog",
   // The main portfolio site this blog lives under — the navbar brand links
   // back here. Update this to the real domain/path once both are deployed.
   portfolioUrl: "http://localhost:5173",

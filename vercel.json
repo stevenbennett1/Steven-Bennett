@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/blog",
+      "destination": "https://REPLACE-WITH-YOUR-BLOG-PROJECT.vercel.app/blog"
+    },
+    {
+      "source": "/blog/:path*",
+      "destination": "https://REPLACE-WITH-YOUR-BLOG-PROJECT.vercel.app/blog/:path*"
+    }
+  ]
+}
