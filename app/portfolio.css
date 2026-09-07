@@ -30,8 +30,6 @@
   --radius: 4px;
   --ease: cubic-bezier(.4,0,.2,1);
 
-  --hero-image: url('/portfolio/steven-portrait-light.png');
-
   color-scheme: light;
 
   background: var(--bg);
@@ -40,19 +38,6 @@
   font-size: 16px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
-  transition: background-color 250ms var(--ease), color 250ms var(--ease);
-}
-
-.portfolio[data-theme="dark"]{
-  --bg: #0A0A0B;
-  --fg: #FAFAFA;
-  --muted: #A1A1AA;
-  --border: #232327;
-  --card: #131316;
-  --accent: #6C8CFF;
-  --accent-fg: #0A0A0B;
-  --hero-image: url('/portfolio/steven-portrait-dark.png');
-  color-scheme: dark;
 }
 
 html{ scroll-behavior: smooth; }
@@ -178,10 +163,6 @@ html{ scroll-behavior: smooth; }
   transform: translateY(-1px);
 }
 
-.portfolio .icon-btn .moon{ display: none; }
-.portfolio[data-theme="dark"] .icon-btn .sun{ display: none; }
-.portfolio[data-theme="dark"] .icon-btn .moon{ display: inline-block; }
-
 .portfolio .nav-toggle{ display: none; }
 
 /* ---------- Buttons ---------- */
@@ -222,39 +203,11 @@ html{ scroll-behavior: smooth; }
 
 /* ---------- Hero ---------- */
 .portfolio .hero{
-  position: relative;
-  overflow: hidden;
-  min-height: 92vh;
+  min-height: 88vh;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
   padding: var(--space-6) 0;
-}
-.portfolio .hero-bg{
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  background-image: var(--hero-image);
-  background-size: cover;
-  background-position: center 8%;
-  background-repeat: no-repeat;
-}
-.portfolio .hero-bg::after{
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to bottom,
-    color-mix(in srgb, var(--bg) 0%, transparent) 0%,
-    color-mix(in srgb, var(--bg) 8%, transparent) 42%,
-    color-mix(in srgb, var(--bg) 55%, transparent) 68%,
-    color-mix(in srgb, var(--bg) 88%, transparent) 88%,
-    var(--bg) 100%
-  );
-}
-.portfolio .hero-copy{
-  position: relative;
-  z-index: 1;
 }
 .portfolio .hero-title{
   font-size: clamp(3.5rem, 9vw, 8rem);
@@ -500,8 +453,7 @@ html{ scroll-behavior: smooth; }
 }
 
 @media (max-width: 768px){
-  .portfolio .hero{ min-height: 82vh; }
-  .portfolio .hero-bg{ background-position: center 4%; }
+  .portfolio .hero{ min-height: 78vh; }
 
   .portfolio .main-nav{
     position: absolute;

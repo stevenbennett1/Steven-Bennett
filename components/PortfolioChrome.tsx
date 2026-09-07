@@ -3,36 +3,15 @@
 import { useEffect } from "react";
 
 /**
- * Handles all interactivity for the portfolio page: theme toggle, sticky
- * header scroll state, mobile nav, and scroll-reveal animations. Mirrors the
- * original static-site script.js logic 1:1, just scoped to the #portfolio-root
- * element instead of document.documentElement (since the portfolio's CSS
- * variables live on that wrapper now, not :root — see app/portfolio.css).
+ * Handles all interactivity for the portfolio page: sticky header scroll
+ * state, mobile nav, and scroll-reveal animations. Scoped to #portfolio-root
+ * since the portfolio's CSS variables live on that wrapper, not :root — see
+ * app/portfolio.css.
  */
 export default function PortfolioChrome() {
   useEffect(() => {
     const root = document.getElementById("portfolio-root");
     if (!root) return;
-
-    const STORAGE_KEY = "sb-theme";
-    function applyTheme(theme: string | null) {
-      if (theme === "light" || theme === "dark") {
-        root!.setAttribute("data-theme", theme);
-      } else {
-        root!.removeAttribute("data-theme");
-      }
-    }
-
-    const themeToggle = document.getElementById("theme-toggle");
-    function onThemeToggle() {
-      const current = root!.getAttribute("data-theme") || "light";
-      const next = current === "dark" ? "light" : "dark";
-      applyTheme(next);
-      try {
-        localStorage.setItem(STORAGE_KEY, next);
-      } catch {}
-    }
-    themeToggle?.addEventListener("click", onThemeToggle);
 
     const header = document.getElementById("site-header");
     function onScroll() {
@@ -112,7 +91,6 @@ export default function PortfolioChrome() {
     if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 
     return () => {
-      themeToggle?.removeEventListener("click", onThemeToggle);
       window.removeEventListener("scroll", onScroll);
       navToggle?.removeEventListener("click", onNavToggle);
       navLinks.forEach((link) => link.removeEventListener("click", closeNav));

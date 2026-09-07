@@ -25,49 +25,6 @@ export const siteConfig = {
   url: "http://localhost:3000/blog",
 };
 
-export const defaultCategories: { name: string; description: string }[] = [
-  {
-    name: "Books I Recommend",
-    description: "Reading notes and recommendations worth your time.",
-  },
-  {
-    name: "Artificial Intelligence",
-    description: "Thoughts on AI, machine learning, and where it's headed.",
-  },
-  {
-    name: "Resources for Upskilling",
-    description: "Courses, tools, and paths for leveling up.",
-  },
-  {
-    name: "Economics & Markets",
-    description: "Notes on markets, policy, and how the world works.",
-  },
-  {
-    name: "Social Opinions",
-    description: "Perspectives on culture and society.",
-  },
-  {
-    name: "Leadership & Business",
-    description: "Lessons on building teams, companies, and decisions.",
-  },
-  {
-    name: "Technology",
-    description: "Where software, hardware, and the internet are going.",
-  },
-  {
-    name: "Health & Longevity",
-    description: "What's worth knowing about living well and living long.",
-  },
-  {
-    name: "Science & Climate",
-    description: "Research, energy, and the state of the planet.",
-  },
-  {
-    name: "Personal Reflections",
-    description: "Notes on habits, mindset, and lessons learned.",
-  },
-  {
-    name: "Travel & Culture",
-    description: "Places, people, and perspective gained on the road.",
-  },
-];
+// Left empty on purpose — no pre-set categories. The admin adds their own
+// from /blog/admin/categories.
+export const defaultCategories: { name: string; description: string }[] = [];

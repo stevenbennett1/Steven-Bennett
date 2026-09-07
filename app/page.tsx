@@ -11,18 +11,7 @@ export const metadata: Metadata = {
 
 export default function PortfolioPage() {
   return (
-    <div className="portfolio" id="portfolio-root" suppressHydrationWarning>
-      {/* Avoids a flash of the wrong theme: applies the saved preference
-          before React hydrates, exactly like the original script.js did.
-          suppressHydrationWarning tells React this element's data-theme
-          attribute is expected to differ from the server render — this is
-          the standard pattern for pre-hydration theme scripts. */}
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `(function(){try{var t=localStorage.getItem('sb-theme');if(t==='light'||t==='dark'){document.currentScript.parentElement.setAttribute('data-theme',t);}}catch(e){}})();`,
-        }}
-      />
-
+    <div className="portfolio" id="portfolio-root">
       <a className="skip-link" href="#main">
         Skip to content
       </a>
@@ -43,37 +32,6 @@ export default function PortfolioPage() {
           </nav>
 
           <div className="header-actions">
-            <button className="icon-btn" id="theme-toggle" type="button" aria-label="Toggle dark mode">
-              <svg
-                className="icon sun"
-                width="18"
-                height="18"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                aria-hidden="true"
-              >
-                <circle cx="12" cy="12" r="4" />
-                <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
-              </svg>
-              <svg
-                className="icon moon"
-                width="18"
-                height="18"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                aria-hidden="true"
-              >
-                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z" />
-              </svg>
-            </button>
-
             <a
               className="btn btn-small btn-primary header-cta"
               href="https://www.linkedin.com/in/stevenbennettofficial/"
@@ -102,13 +60,8 @@ export default function PortfolioPage() {
       <main id="main">
         {/* HERO */}
         <section className="hero" id="top">
-          <div className="hero-bg" aria-hidden="true" />
           <div className="wrap hero-copy">
-            <h1 className="hero-title reveal">
-              Hi there,
-              <br />
-              Steven Bennett.
-            </h1>
+            <h1 className="hero-title reveal">Building future with brightest of minds.</h1>
             <p className="hero-sub reveal">
               Deep tech investor. Startup builder since 2015, now backing early-stage founders.{" "}
               <a className="inline-link" href="https://www.linkedin.com/in/stevenbennettofficial/" target="_blank" rel="noopener">
